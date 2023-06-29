@@ -1,0 +1,13 @@
+<main class="main-component">
+    <form class="login-form" [formGroup]="loginForm" (submit)="onSubmit()">
+        <div class="form-item">
+            <label for="" class="form-label">Usuário</label>
+            <input type="text" class="form-control" placeholder="Usuário" formControlName="username">
+        </div>
+        <div class="form-item">
+            <label for="" class="form-label">Senha</label>
+            <input type="password" class="form-control" placeholder="Senha" formControlName="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Entrar</button>
+    </form>
+</main>

@@ -1,0 +1,14 @@
+<div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary side-menu">
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a routerLink="/dashboard" class="nav-link" [ngClass]="selectedMenu('/dashboard') ? 'active' : 'link-body-emphasis'">
+          Home
+        </a>
+      </li>
+      <li [hidden]="hasPermissonBank">
+        <a routerLink="banks" class="nav-link" [ngClass]="selectedMenu('/dashboard/banks') ? 'active' : 'link-body-emphasis'">
+          Bancos
+        </a>
+      </li>
+    </ul>
+</div>

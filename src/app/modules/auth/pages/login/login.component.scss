@@ -1,0 +1,22 @@
+button {
+    width: 8rem;
+    margin: 1rem 0;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    margin: .8rem 0;
+}
+
+form {
+    background-color: #ccc7c7;
+    padding: 2.5rem;
+    border-radius: .4rem;
+}

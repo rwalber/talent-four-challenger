@@ -1,0 +1,13 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title">Confirmação de Exclusão</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="activeModal.close()"></button>
+  </div>
+  <div class="modal-body">
+    <p>Confirma a exclusão do registro?</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="handleDelete()">Sim</button>
+    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="activeModal.close()">Não</button>
+  </div>
+</div>
