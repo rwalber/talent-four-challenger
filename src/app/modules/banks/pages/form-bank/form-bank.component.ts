@@ -33,10 +33,10 @@ export class FormBankComponent {
       codigo: [{ value: '', disabled: this.hasDisabledForm }, [Validators.required, Validators.minLength(3), Validators.maxLength(3)], ],
       descricao: [{ value: '', disabled: this.hasDisabledForm },  Validators.required],
       id: [0,  Validators.required],
-      statusId: [{ value: '', disabled: this.hasDisabledForm },  Validators.required],
+      statusId: [{ value: 'A', disabled: this.hasDisabledForm },  Validators.required],
       status: this.fb.group({
-        id: ['',  Validators.required],
-        descricao: ['',  Validators.required]
+        id: ['A',  Validators.required],
+        descricao: ['Ativo',  Validators.required]
       })
     });
     this.activatedRoute.params.subscribe(params => {
@@ -62,7 +62,7 @@ export class FormBankComponent {
     this.banksService.createBank(this.bankForm.value, (status, response) => {
       if(status) {
         this.router.navigate(['/dashboard/banks']);
-        this.notifier.notify('success', 'Banco inserido com sucesso!');
+        this.notifier.notify('info', 'Operação realizada com sucesso!');
       } else {
         this.notifier.notify('error', response.mensagemUsuario);
       }
@@ -74,7 +74,7 @@ export class FormBankComponent {
     this.banksService.updateBank(this.bankForm.value, (status, response) => {
       if(status) {
         this.router.navigate(['/dashboard/banks']);
-        this.notifier.notify('success', 'Banco atualizado com sucesso!');
+        this.notifier.notify('info', 'Operação realizada com sucesso!');
       } else {
         this.notifier.notify('error', response.mensagemUsuario);
       }

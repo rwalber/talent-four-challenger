@@ -30,7 +30,7 @@ export class DeleteBankComponent {
     )
     .then(() => {
       this.activeModal.close(true);
-      this.notifier.notify('success', 'Banco(s) removido(s) com sucesso!');
+      this.notifier.notify('info', 'Operação realizada com sucesso!');
     }).catch(() => this.notifier.notify('error', 'Um ou mais bancos apresentou erro durante o processo de remoção.'));
   }
   

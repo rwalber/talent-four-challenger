@@ -33,10 +33,10 @@ export class RequestService {
 				if (callBack) callBack(true, body);
 			},
 			error: error => {
-				const errorMessage = error.error[0] || 'Não foi possível conectar-se ao servidor. Tente novamente mais tarde';
 				if(error.status === 401) {
 					this.logoff();
 				}
+				const errorMessage = error.error[0] || 'Não foi possível conectar-se ao servidor. Tente novamente mais tarde';
 				if (callBack) callBack(false, errorMessage);
 			}
 		});
@@ -49,10 +49,10 @@ export class RequestService {
 				if (callBack) callBack(true, body);
 			},
 			error: error => {
-				const errorMessage = error.error[0] || 'Não foi possível conectar-se ao servidor. Tente novamente mais tarde';
 				if(error.status === 401) {
 					this.logoff();
 				}
+				const errorMessage = error.error[0] || 'Não foi possível conectar-se ao servidor. Tente novamente mais tarde';
 				if (callBack) callBack(false, errorMessage);
 			}
 		});
@@ -65,10 +65,10 @@ export class RequestService {
 				if (callBack) callBack(true, response);
 			},
 			error: error => {
-				const errorMessage = error.error[0] || 'Não foi possível conectar-se ao servidor. Tente novamente mais tarde';
 				if(error.status === 401) {
 					this.logoff();
 				}
+				const errorMessage = error.error[0] || 'Não foi possível conectar-se ao servidor. Tente novamente mais tarde';
 				if (callBack) callBack(false, errorMessage);
 			}
 		});
@@ -81,10 +81,10 @@ export class RequestService {
 				if (callBack) callBack(true, response);
 			},
 			error: error => {
-				const errorMessage = error.error[0] || 'Não foi possível conectar-se ao servidor. Tente novamente mais tarde';
 				if(error.status === 401) {
 					this.logoff();
 				}
+				const errorMessage = error.error[0] || 'Não foi possível conectar-se ao servidor. Tente novamente mais tarde';
 				if (callBack) callBack(false, errorMessage);
 			}
 		});

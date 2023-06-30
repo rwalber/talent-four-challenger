@@ -38,7 +38,8 @@ export class AuthService {
         callBack(true, body);
       },
       error: error => {
-        callBack(false, error.error.error_description);
+        const errorMensager = error.error.error === 'invalid_grant' ? 'Usuário ou senha inválidos' : error.error.error_description;
+        callBack(false, errorMensager);
       }
     });
   }

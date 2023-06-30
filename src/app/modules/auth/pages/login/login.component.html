@@ -1,5 +1,8 @@
 <main class="main-component">
-    <form class="login-form" [formGroup]="loginForm" (submit)="onSubmit()">
+    <form class="login-form rounded shadow-lg container" [formGroup]="loginForm" (submit)="onSubmit()">
+        <div class="thumbnail">
+            <img src="../../../../../assets/images/thumb-bank.png" alt="Gestão Bancária">
+        </div>
         <div class="form-item">
             <label for="" class="form-label">Usuário</label>
             <input type="text" class="form-control" placeholder="Usuário" formControlName="username">

@@ -1,12 +1,14 @@
 nav {
-    height: 4rem;
+    height: 5rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 
     width: 100%;
-    border: .1rem solid #d4d1d1;
-    padding: 0 1rem;
-    border-radius: .4rem;
+    padding: 0 2rem;
+
+    h4 {
+        margin: 0 !important;
+    }
 }
