@@ -1,0 +1,65 @@
+<main class="inner-component">
+  <section class="header-component">
+    <div class="search-bar">
+      <input type="text" [(ngModel)]="searchString" class="form-control" placeholder="Buscar banco pela descrição">
+      <button type="button" class="btn btn-primary" (click)="searchBanks()">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+    <div class="buttons">
+      <button 
+        class="btn btn-primary"
+        type="button" routerLink="new"
+        [hidden]="hasPermission('ROLE_BANCO_ADD')"
+      >
+        Novo
+      </button>
+      <button 
+        class="btn btn-danger"
+        type="button"
+        (click)="openModalDeleteBank()"
+        [disabled]="selectedBanks.length === 0"
+        [hidden]="hasPermission('ROLE_BANCO_DEL')"
+      >
+        Excluir
+      </button>
+    </div>
+  </section>
+  <section class="content-component">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">id</th>
+          <th scope="col">Status</th>
+          <th scope="col">Código</th>
+          <th scope="col">Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-item" *ngFor="let bank of banks; index as i">
+            <th scope="row">
+              <input class="form-check-input me-1" type="checkbox" [value]="bank.id" (change)="handleCheckChange($event)">
+            </th>
+            <td>{{ bank.id }}</td>
+            <td>
+              <label for="" class="bank-status" [ngClass]="bank.status.id === 'I' ? 'I': 'A' ">
+                {{ bank.status.descricao }}
+              </label>
+            </td>
+            <td>{{ bank.codigo }}</td>
+            <td (click)="navigateToDetail(bank.id)">{{ bank.descricao }}</td>
+        </tr> 
+      </tbody>
+    </table>
+  </section>
+  <section class="footer-component">
+    <ul class="pagination">
+      <li class="page-item" [ngClass]="i === page ? 'active' : '' " *ngFor='let in of counter(); let i = index'>
+        <a class="page-link" (click)="getBanks(i)">
+          {{ i + 1 }}
+        </a>
+      </li>
+    </ul>
+  </section>
+</main>

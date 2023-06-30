@@ -1,0 +1,78 @@
+a:hover {
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    
+    button {
+        min-width: 7rem;
+        margin-right: .5rem;
+        
+        @media screen and (max-width: 810px) {
+            margin-left: .5rem;
+            margin-right: 0;
+        }
+    }
+    
+    @media screen and (max-width: 810px) {
+        width: 100%;
+        margin: 1rem 0;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+}
+    
+
+.search-bar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    input {
+        min-width: 30rem !important;
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+       
+        @media screen and (max-width: 1058px) {
+            min-width: 20rem !important;
+        }
+
+        @media screen and (max-width: 974px) {
+            min-width: 10rem !important;
+        }
+
+        @media screen and (max-width: 810px) {
+            width: 100% !important;
+        }
+    }
+    button {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+    }
+}
+
+.bank-status {
+    width: 5rem;
+    padding: .5rem 1rem;
+    font-size: .7rem;
+    text-align: center;
+    font-weight: 600;
+    border-radius: .8rem;
+    text-transform: uppercase;
+    background-color: #ddd6d6;
+}
+
+.I {
+    color: #bd3939;
+}
+
+.A {
+    color: #4d9651;
+}
+
+.table-item:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,62 @@
+<main class="inner-component">
+    <section class="header-component">
+        <h4>{{ editMode ? bankForm.controls['descricao'].value : 'Novo Banco'}}</h4>
+        <div class="buttons">
+            <button
+                class="btn btn-primary"
+                type="button"
+                (click)="createBank()"
+                [hidden]="editMode || hasPermission('ROLE_BANCO_ADD')"
+                [disabled]="bankForm.invalid"
+            >
+                Salvar
+            </button>
+            <button 
+                class="btn btn-primary"
+                type="button"
+                (click)="updateBank()"
+                [disabled]="bankForm.invalid"
+                [hidden]="!editMode || hasPermission('ROLE_BANCO_EDT')"
+            >
+                Editar
+            </button>
+            <button 
+                class="btn btn-danger"
+                type="button"
+                (click)="openModalDeleteBank()"
+                [hidden]="!editMode || hasPermission('ROLE_BANCO_DEL')"
+            >
+                Excluir
+            </button>
+            <button class="btn btn-primary" type="button" routerLink="/dashboard/banks">Fechar</button>
+          </div>
+    </section>
+    <section class="content-component">
+        <form [formGroup]="bankForm">
+            <div class="row-form-items">
+                <div class="form-item">
+                    <label for="" class="form-label">Código</label>
+                    <input 
+                        maxlength="3" 
+                        minlength="3" 
+                        type="text" 
+                        class="form-control" 
+                        placeholder="Código do Banco" 
+                        formControlName="codigo"
+                    >
+                </div>
+                <div class="form-item">
+                    <label for="" class="form-label">Status</label>
+                    <select class="form-select" aria-label="Status" formControlName="statusId" (change)="handleSelectStatus($event)">
+                        <option value='A'>Ativo</option>
+                        <option value='I'>Inativo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-item">
+                <label for="" class="form-label">Descrição</label>
+                <input type="text" class="form-control" placeholder="Descrição" formControlName="descricao">
+            </div>
+        </form>
+    </section>
+</main>
